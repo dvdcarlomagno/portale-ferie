@@ -1,0 +1,8 @@
+{
+  "name": "feinar-starter",
+  "version": "0.1.0",
+  "description": "Kit di partenza per il team: definizione di fatto, test prima del codice e memoria di progetto.",
+  "author": {
+    "name": "Team formazione"
+  }
+}

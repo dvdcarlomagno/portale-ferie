@@ -1,0 +1,18 @@
+---
+description: Scrivere prima il test che fallisce, poi il codice che lo fa passare, nei file di web e api
+globs: web/src/**/*.ts,web/src/**/*.tsx,api/**/*.cs
+alwaysApply: false
+---
+
+# Test prima del codice
+
+Quando aggiungete o cambiate un comportamento:
+
+1. Scrivete il test che descrive il comportamento nuovo, con un nome in italiano che dice che cosa ci si aspetta.
+2. Eseguite il test e verificate che fallisca per la ragione giusta. Un errore di compilazione o un test rotto per altri motivi non conta.
+3. Scrivete il codice minimo che fa passare il test.
+4. Eseguite di nuovo la suite e riportate l'ultima riga del risultato.
+
+Per il front-end il comando è `npm test` in `web/`. Per l'API è `dotnet test api.Tests/`.
+
+Non modificate un test per farlo passare, a meno che il comportamento atteso sia cambiato e lo abbiate dichiarato.
