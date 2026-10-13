@@ -1,0 +1,9 @@
+# Dipendenze e build
+node_modules/
+dist/
+bin/
+obj/
+
+# Editor e sistema
+.DS_Store
+*.log

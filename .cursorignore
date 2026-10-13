@@ -1,0 +1,6 @@
+# File che l'agente non deve leggere né indicizzare (sintassi .gitignore).
+# Attenzione: questo file non è un confine di sicurezza. Non mettete segreti nel repository.
+bin/
+obj/
+node_modules/
+dist/
