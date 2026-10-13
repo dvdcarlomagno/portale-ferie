@@ -60,4 +60,4 @@
 3. Aggiornare le festività per il 2027 a gennaio.
 
 **Ipotesi non confermate:**
-- Richieste di permesso a mezze giornate (vedi `knowledge/ferie/hypotheses.md`, H2).
+- Richieste di permesso a mezze giornate: idea, nessuno ha ancora chiesto le regole a chi decide sui permessi.
