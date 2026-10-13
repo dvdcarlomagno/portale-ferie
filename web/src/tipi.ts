@@ -9,6 +9,7 @@ export interface Richiesta {
   al: string;
   tipo: TipoRichiesta;
   note: string | null;
+  motivazione?: string | null;
 }
 
 export type NuovaRichiesta = Omit<Richiesta, 'id'>;

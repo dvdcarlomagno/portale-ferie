@@ -24,7 +24,8 @@ public sealed class RichiesteStore
             nuova.Dal,
             nuova.Al,
             nuova.Tipo,
-            string.IsNullOrWhiteSpace(nuova.Note) ? null : nuova.Note.Trim());
+            string.IsNullOrWhiteSpace(nuova.Note) ? null : nuova.Note.Trim(),
+            string.IsNullOrWhiteSpace(nuova.Motivazione) ? null : nuova.Motivazione.Trim());
 
         lock (_lock)
         {

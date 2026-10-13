@@ -20,6 +20,9 @@ app.MapPost("/api/richieste", (NuovaRichiesta input, RichiesteStore store) =>
     if (input.Tipo is not ("ferie" or "permesso"))
         return Results.BadRequest("Il tipo deve essere 'ferie' o 'permesso'.");
 
+    if (GiorniLavorativi.Conta(input.Dal, input.Al) > 5 && string.IsNullOrWhiteSpace(input.Motivazione))
+        return Results.BadRequest("La motivazione è obbligatoria per richieste di oltre 5 giorni lavorativi.");
+
     var creata = store.Aggiungi(input);
     return Results.Created($"/api/richieste/{creata.Id}", creata);
 });

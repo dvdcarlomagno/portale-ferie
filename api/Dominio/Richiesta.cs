@@ -7,7 +7,8 @@ public sealed record Richiesta(
     DateOnly Dal,
     DateOnly Al,
     string Tipo,
-    string? Note);
+    string? Note,
+    string? Motivazione = null);
 
 /// <summary>Dati inviati dal form per creare una nuova richiesta.</summary>
 public sealed record NuovaRichiesta(
@@ -15,4 +16,5 @@ public sealed record NuovaRichiesta(
     DateOnly Dal,
     DateOnly Al,
     string Tipo,
-    string? Note);
+    string? Note,
+    string? Motivazione = null);

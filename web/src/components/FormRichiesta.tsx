@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react';
+import { contaGiorniLavorativi } from '../dominio/giorniLavorativi';
 import type { NuovaRichiesta, TipoRichiesta } from '../tipi';
 
 interface Props {
@@ -11,6 +12,7 @@ interface ValoriForm {
   al: string;
   tipo: TipoRichiesta;
   note: string;
+  motivazione: string;
 }
 
 const valoriIniziali: ValoriForm = {
@@ -19,11 +21,15 @@ const valoriIniziali: ValoriForm = {
   al: '',
   tipo: 'ferie',
   note: '',
+  motivazione: '',
 };
 
 export function FormRichiesta({ onSalva }: Props) {
   const [valori, setValori] = useState<ValoriForm>(valoriIniziali);
   const [inInvio, setInInvio] = useState(false);
+
+  const giorni = valori.dal && valori.al ? contaGiorniLavorativi(valori.dal, valori.al) : null;
+  const motivazioneObbligatoria = giorni !== null && giorni > 5;
 
   function aggiorna<K extends keyof ValoriForm>(campo: K, valore: ValoriForm[K]) {
     setValori((precedenti) => ({ ...precedenti, [campo]: valore }));
@@ -39,6 +45,7 @@ export function FormRichiesta({ onSalva }: Props) {
         al: valori.al,
         tipo: valori.tipo,
         note: valori.note.trim() || null,
+        motivazione: valori.motivazione.trim() || null,
       });
       setValori(valoriIniziali);
     } finally {
@@ -91,6 +98,16 @@ export function FormRichiesta({ onSalva }: Props) {
       <label>
         Note
         <textarea name="note" value={valori.note} onChange={(e) => aggiorna('note', e.target.value)} />
+      </label>
+      {giorni !== null && <p>Giorni lavorativi: {giorni}</p>}
+      <label>
+        Motivazione
+        <textarea
+          name="motivazione"
+          required={motivazioneObbligatoria}
+          value={valori.motivazione}
+          onChange={(e) => aggiorna('motivazione', e.target.value)}
+        />
       </label>
       <button type="submit" disabled={inInvio}>
         Invia richiesta

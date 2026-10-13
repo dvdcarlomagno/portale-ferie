@@ -22,6 +22,7 @@ describe('FormRichiesta', () => {
       al: '2026-10-06',
       tipo: 'permesso',
       note: null,
+      motivazione: null,
     });
   });
 });
