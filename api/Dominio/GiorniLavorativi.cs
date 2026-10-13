@@ -25,7 +25,7 @@ public static class GiorniLavorativi
     public static int Conta(DateOnly dal, DateOnly al)
     {
         var giorni = 0;
-        for (var giorno = dal; giorno <= al; giorno = giorno.AddDays(1))
+        for (var giorno = dal; giorno < al; giorno = giorno.AddDays(1))
         {
             if (EGiornoLavorativo(giorno))
             {

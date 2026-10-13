@@ -27,7 +27,7 @@ export function eGiornoLavorativo(istante: number): boolean {
 export function contaGiorniLavorativi(dal: string, al: string): number {
   const fine = daStringa(al);
   let giorni = 0;
-  for (let istante = daStringa(dal); istante <= fine; istante += MILLISECONDI_PER_GIORNO) {
+  for (let istante = daStringa(dal); istante < fine; istante += MILLISECONDI_PER_GIORNO) {
     if (eGiornoLavorativo(istante)) {
       giorni++;
     }
