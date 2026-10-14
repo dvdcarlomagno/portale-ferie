@@ -18,7 +18,7 @@ cd sample-repo
 git branch -a
 ```
 
-Dovete vedere i branch `main`, `demo-debug`, `lab-s1`, `soluzione-s1`, `lab-s2`, `soluzione-s2` (come `remotes/origin/...`). Per passare a un branch: `git switch lab-s1`.
+Dovete vedere i branch `main`, `lab-s1` e `lab-s2` (come `remotes/origin/...`). Per passare a un branch: `git switch lab-s1`.
 
 ## Front-end: installazione e test
 
