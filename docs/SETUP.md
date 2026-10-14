@@ -10,12 +10,15 @@ Questa guida serve a preparare il computer prima del corso. Eseguite i passaggi 
 
 ## Clonare il repository
 
+Riceverete per mail il file `portale-ferie.bundle` (un repository Git completo, con tutti i branch). Salvatelo in una cartella di lavoro e da lì:
+
 ```bash
-git clone <URL-del-repository-del-corso> sample-repo
+git clone portale-ferie.bundle sample-repo
 cd sample-repo
+git branch -a
 ```
 
-Il repository non ha remoti configurati nella copia di lavoro del formatore: se lavorate da una copia locale, il comando precedente non serve.
+Dovete vedere i branch `main`, `demo-debug`, `lab-s1`, `soluzione-s1`, `lab-s2`, `soluzione-s2` (come `remotes/origin/...`). Per passare a un branch: `git switch lab-s1`.
 
 ## Front-end: installazione e test
 
