@@ -32,12 +32,14 @@ Risultato atteso: l'ultima riga contiene `Tests  5 passed (5)` (sul branch `main
 
 ## API: test
 
+Il file `global.json` nella radice dice all'SDK .NET 10 di usare Microsoft.Testing.Platform. Senza quel file, `dotnet test` si ferma prima dei test.
+
 ```bash
 cd api.Tests
 dotnet test
 ```
 
-Risultato atteso: l'ultima riga contiene `Passed!` e nessun test fallito.
+Risultato atteso: il riepilogo contiene `Test run summary: Passed!` e `failed: 0`. Gli avvisi `xUnit1051` non fanno fallire i test.
 
 ## Avvio dell'app
 
